@@ -3,9 +3,10 @@
 import * as React from "react"
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import { MenuList, MenuListItem, Separator, styleReset } from 'react95';
-// pick a theme of your choice
+import { styleReset } from 'react95';
 import original from 'react95/dist/themes/original';
+
+import { NavBarProvider } from "@/app/context/NavbarContext";
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -24,14 +25,14 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export default function Provider({ children, ...props }: any){
-    // Your component logic here...
-  
+export default function Provider({ children, ...props }: any){  
     return (
       <div {...props}>
         <GlobalStyles />
         <ThemeProvider theme={original}>
+            <NavBarProvider>
             {children}
+            </NavBarProvider>
         </ThemeProvider>
       </div>
     );

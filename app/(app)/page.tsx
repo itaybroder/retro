@@ -1,6 +1,6 @@
 "use client";
 import { Share } from '@capacitor/share'
-import { MenuList, MenuListItem, Separator, styleReset } from 'react95';
+import { MenuList, MenuListItem, Separator, Button } from 'react95';
 
 export default function Home() {
   
@@ -18,15 +18,15 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <MenuList>
+    <div>
+  <MenuList>
         <MenuListItem>🎤 Sing</MenuListItem>
         <MenuListItem>💃🏻 Dance</MenuListItem>
         <Separator />
-        <MenuListItem disabled>😴 Sleep</MenuListItem>
+        <MenuListItem disabled>😴 HEYY</MenuListItem>
       </MenuList>
       
-      <button onClick={()=>share()}>Share</button>
-    </main>
+      <Button onClick={()=>share()}>Share</Button>
+    </div>
   )
 }
